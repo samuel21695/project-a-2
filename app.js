@@ -28,3 +28,5 @@ function createCounter() {
   };
 }
 
+const counter = createCounter(); 
+
