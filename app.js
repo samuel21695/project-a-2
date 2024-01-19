@@ -15,6 +15,8 @@ function createCounter() {
   // 결과적으로 지역변수 localCountNumber는 값이 남아 증가합니다.
 
   return function increase() {
-    
+    localCountNumber++;
+    console.log(`지역변수 값 : ${localCountNumber};`)
+
   }
 }
