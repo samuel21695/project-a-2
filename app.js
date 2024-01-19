@@ -10,4 +10,11 @@
 function createCounter() {
   let localCountNumber = 0; // 클로저 내부에 있는 지역 변수
 
+  // 리턴이 함수이기 때문에, createCounter()를 호출하면
+  // increaes() 함수를 리턴하고,
+  // 결과적으로 지역변수 localCountNumber는 값이 남아 증가합니다.
+
+  return function increase() {
+    
+  }
 }
