@@ -8,5 +8,6 @@
 // 아래는 클로저 패턴을 사용하여 전역 변수를 사용하지 않고도
 // 전역변수를 다루는 코드입니다. 
 function createCounter() {
-  
+  let localCountNumber = 0; // 클로저 내부에 있는 지역 변수
+
 }
