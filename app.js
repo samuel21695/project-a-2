@@ -17,7 +17,7 @@ function createCounter() {
 
   return function increase() {
     localCountNumber++;
-    console.log(`지역변수 값 : ${localCountNumber};`)
+    console.log(`지역변수 값 : ${localCountNumber}`)
 
     // 아래의 조건식은 10으로 나누어 떨어질 때, 즉 나머지가 0일 때로
     // 10의 배수를 위해 설정한 조건식입니다.
@@ -30,3 +30,11 @@ function createCounter() {
 
 const counter = createCounter(); 
 
+// 열 번 호출하기
+for (let i = 0; i < 50; i++) {
+  counter();
+  // 호출할 때마다 localCountNumber 증가
+  // 덩달아 globalCountNumber도 증가
+}
+
+console.log(globalCountNumber); //? 5
