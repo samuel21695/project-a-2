@@ -4,6 +4,7 @@
 // 가장 중요한 '어디서든, 의도치 않은 곳에서 변경될 수 있는' 문제가 크기 떄문에
 // 현재 훈련생분들의 수준에서는 전역변수를 무분별하게 사용하면 문제가 될 수 있습니다.
 // 눈에 보이지 않는 상태값을 어거지로 꺼낸 예제이므로 안티패턴입니다.
+let globalCountNumber = 0;
 
 // 아래는 클로저 패턴을 사용하여 전역 변수를 사용하지 않고도
 // 전역변수를 다루는 코드입니다. 
@@ -18,5 +19,12 @@ function createCounter() {
     localCountNumber++;
     console.log(`지역변수 값 : ${localCountNumber};`)
 
-  }
+    // 아래의 조건식은 10으로 나누어 떨어질 때, 즉 나머지가 0일 때로
+    // 10의 배수를 위해 설정한 조건식입니다.
+    if (localCountNumber % 10 === 0) {
+      globalCountNumber++;
+      console.log(`전역 변수 값 : ${globalCountNumber}`);
+    }
+  };
 }
+
